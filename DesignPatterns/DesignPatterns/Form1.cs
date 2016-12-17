@@ -17,6 +17,7 @@ namespace DesignPatterns
         Orcamento orcamento;
         ISS iss = new ISS();
         ICMS icms = new ICMS();
+        ICC icc = new ICC();
         CalculadorDeImpostos calc = new CalculadorDeImpostos();
         
         public Form1()
@@ -32,14 +33,17 @@ namespace DesignPatterns
                 orcamento = new Orcamento(valor);
                 var valorIss = calc.CalcularImposto(orcamento, iss);
                 var valorIcms = calc.CalcularImposto(orcamento, icms);
+                var valorIcc = calc.CalcularImposto(orcamento, icc);
                 textICMS.Text = Convert.ToString(valorIcms);
                 textISS.Text = Convert.ToString(valorIss);
+                textICC.Text = Convert.ToString(valorIcc);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("O campo valor do orçamento deve estar preenchido");
                 textICMS.Text = "";
                 textISS.Text = "";
+                textICC.Text = "";
             }
         }
     }

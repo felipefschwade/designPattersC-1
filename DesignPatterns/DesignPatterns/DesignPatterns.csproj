@@ -53,6 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Impostos\CalculadorDeImpostos.cs" />
+    <Compile Include="Impostos\ICC.cs" />
     <Compile Include="Impostos\ICMS.cs" />
     <Compile Include="Impostos\Imposto.cs" />
     <Compile Include="Impostos\ISS.cs" />

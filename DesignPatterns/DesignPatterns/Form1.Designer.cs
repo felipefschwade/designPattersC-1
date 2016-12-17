@@ -35,6 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.calcularImpostos = new System.Windows.Forms.Button();
+            this.textICC = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +67,7 @@
             // textISS
             // 
             this.textISS.Cursor = System.Windows.Forms.Cursors.No;
-            this.textISS.Location = new System.Drawing.Point(172, 75);
+            this.textISS.Location = new System.Drawing.Point(172, 71);
             this.textISS.Name = "textISS";
             this.textISS.ReadOnly = true;
             this.textISS.Size = new System.Drawing.Size(100, 20);
@@ -83,7 +85,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(171, 59);
+            this.label3.Location = new System.Drawing.Point(169, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 5;
@@ -99,11 +101,31 @@
             this.calcularImpostos.UseVisualStyleBackColor = true;
             this.calcularImpostos.Click += new System.EventHandler(this.calcularImpostos_Click);
             // 
+            // textICC
+            // 
+            this.textICC.Cursor = System.Windows.Forms.Cursors.No;
+            this.textICC.Location = new System.Drawing.Point(172, 111);
+            this.textICC.Name = "textICC";
+            this.textICC.ReadOnly = true;
+            this.textICC.Size = new System.Drawing.Size(100, 20);
+            this.textICC.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(169, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Valor do ICC";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textICC);
             this.Controls.Add(this.calcularImpostos);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -127,6 +149,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button calcularImpostos;
+        private System.Windows.Forms.TextBox textICC;
+        private System.Windows.Forms.Label label4;
     }
 }
 
