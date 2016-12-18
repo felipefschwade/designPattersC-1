@@ -9,10 +9,12 @@ namespace Empresa.DesignPatterns.Vendas
     public class Orcamento
     {
         public double Valor { get; private set; }
+        public List<Item> Itens { get; private set; } = new List<Item>();
 
-        public Orcamento(double valor)
+        public Orcamento(List<Item> itens)
         {
-            Valor = valor;
+            Valor = itens.Sum(i => i.Preco);
+            Itens = itens;
         }
     }
 }
