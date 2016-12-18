@@ -44,6 +44,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonMostraListaItens = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textValorDesconto = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +68,7 @@
             // textICMS
             // 
             this.textICMS.Cursor = System.Windows.Forms.Cursors.No;
-            this.textICMS.Location = new System.Drawing.Point(172, 29);
+            this.textICMS.Location = new System.Drawing.Point(302, 20);
             this.textICMS.Name = "textICMS";
             this.textICMS.ReadOnly = true;
             this.textICMS.Size = new System.Drawing.Size(100, 20);
@@ -75,7 +77,7 @@
             // textISS
             // 
             this.textISS.Cursor = System.Windows.Forms.Cursors.No;
-            this.textISS.Location = new System.Drawing.Point(172, 71);
+            this.textISS.Location = new System.Drawing.Point(302, 62);
             this.textISS.Name = "textISS";
             this.textISS.ReadOnly = true;
             this.textISS.Size = new System.Drawing.Size(100, 20);
@@ -84,7 +86,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(169, 13);
+            this.label2.Location = new System.Drawing.Point(299, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 4;
@@ -93,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(169, 52);
+            this.label3.Location = new System.Drawing.Point(299, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 5;
@@ -112,7 +114,7 @@
             // textICC
             // 
             this.textICC.Cursor = System.Windows.Forms.Cursors.No;
-            this.textICC.Location = new System.Drawing.Point(172, 111);
+            this.textICC.Location = new System.Drawing.Point(302, 102);
             this.textICC.Name = "textICC";
             this.textICC.ReadOnly = true;
             this.textICC.Size = new System.Drawing.Size(100, 20);
@@ -121,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(169, 95);
+            this.label4.Location = new System.Drawing.Point(299, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 13);
             this.label4.TabIndex = 8;
@@ -189,11 +191,31 @@
             this.buttonMostraListaItens.UseVisualStyleBackColor = true;
             this.buttonMostraListaItens.Click += new System.EventHandler(this.buttonMostraListaItens_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(299, 125);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Valor do Desconto";
+            // 
+            // textValorDesconto
+            // 
+            this.textValorDesconto.Cursor = System.Windows.Forms.Cursors.No;
+            this.textValorDesconto.Location = new System.Drawing.Point(302, 141);
+            this.textValorDesconto.Name = "textValorDesconto";
+            this.textValorDesconto.ReadOnly = true;
+            this.textValorDesconto.Size = new System.Drawing.Size(100, 20);
+            this.textValorDesconto.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 293);
+            this.ClientSize = new System.Drawing.Size(414, 293);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textValorDesconto);
             this.Controls.Add(this.buttonMostraListaItens);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textValorItem);
@@ -235,6 +257,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonMostraListaItens;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textValorDesconto;
     }
 }
 

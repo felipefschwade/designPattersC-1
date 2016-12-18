@@ -2,13 +2,8 @@
 using Empresa.DesignPatterns.Impostos;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Empresa.DesignPatterns.Vendas.Descontos;
 
 namespace DesignPatterns
 {
@@ -20,6 +15,7 @@ namespace DesignPatterns
         ICC icc = new ICC();
         CalculadorDeImpostos calc = new CalculadorDeImpostos();
         List<Item> itens = new List<Item>();
+        CalculadorDeDescontos calcDescontos = new CalculadorDeDescontos();
         
         public Form1()
         {
@@ -32,12 +28,14 @@ namespace DesignPatterns
             {
                 orcamento = new Orcamento(itens);
                 textOrcamento.Text = Convert.ToString(orcamento.Valor);
+                var valorDesconto = calcDescontos.Calcula(orcamento);
                 var valorIss = calc.CalcularImposto(orcamento, iss);
                 var valorIcms = calc.CalcularImposto(orcamento, icms);
                 var valorIcc = calc.CalcularImposto(orcamento, icc);
                 textICMS.Text = Convert.ToString(valorIcms);
                 textISS.Text = Convert.ToString(valorIss);
                 textICC.Text = Convert.ToString(valorIcc);
+                textValorDesconto.Text = Convert.ToString(valorDesconto);
             }
             catch (Exception ex)
             {
