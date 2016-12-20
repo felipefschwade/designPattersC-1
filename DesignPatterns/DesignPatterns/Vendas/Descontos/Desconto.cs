@@ -8,7 +8,7 @@ namespace Empresa.DesignPatterns.Vendas.Descontos
 {
     public interface Desconto
     {
-        Desconto proximo { set; get;}
+        Desconto Proximo { set; get;}
         double calcula(Orcamento orcamento);
     }
 }

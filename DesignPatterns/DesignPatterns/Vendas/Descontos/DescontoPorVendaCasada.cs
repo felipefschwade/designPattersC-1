@@ -8,7 +8,12 @@ namespace Empresa.DesignPatterns.Vendas.Descontos
 {
     public class DescontoPorVendaCasada : Desconto
     {
-        public Desconto proximo { get; set;}
+        public Desconto Proximo { get; set;}
+
+        public DescontoPorVendaCasada(Desconto proximo)
+        {
+            Proximo = proximo; 
+        }
 
         public double calcula(Orcamento orcamento)
         {
@@ -16,7 +21,7 @@ namespace Empresa.DesignPatterns.Vendas.Descontos
             {
                 return orcamento.Valor * 0.05;
             }
-            return proximo.calcula(orcamento);
+            return Proximo.calcula(orcamento);
         }
         private bool Existe(string nome, Orcamento orcamento)
         {
