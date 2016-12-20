@@ -8,7 +8,7 @@ namespace Empresa.DesignPatterns.Vendas.Descontos
 {
     class SemDesconto : Desconto
     {
-        public Desconto proximo { get; set; }
+        public Desconto Proximo { get; set; }
 
         public double calcula(Orcamento orcamento)
         {

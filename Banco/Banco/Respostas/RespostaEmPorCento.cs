@@ -10,7 +10,7 @@ namespace Banco.Respostas
 {
     class RespostaEmPorCento : Resposta
     {
-        public Resposta proxima { get; set; }
+        public Resposta proxima { get; set; } = null;
 
         public void Responde(Requisicao Req, Conta conta)
         {
@@ -20,9 +20,13 @@ namespace Banco.Respostas
                                         conta.Titular, Convert.ToString(conta.Saldo), Convert.ToString(conta.Numero));
                 Console.WriteLine(msg);
             }
-            else
+            else if (proxima != null)
             {
                 proxima.Responde(Req, conta);
+            }
+            else
+            {
+                throw new ArgumentException("Tipo de resposta inválido");
             }
         }
     }
