@@ -55,8 +55,12 @@
     <Compile Include="Impostos\CalculadorDeImpostos.cs" />
     <Compile Include="Impostos\ICC.cs" />
     <Compile Include="Impostos\ICMS.cs" />
+    <Compile Include="Impostos\ICPP.cs" />
+    <Compile Include="Impostos\IHIT.cs" />
+    <Compile Include="Impostos\IKCV.cs" />
     <Compile Include="Impostos\Imposto.cs" />
     <Compile Include="Impostos\ISS.cs" />
+    <Compile Include="Impostos\TemplateImposto.cs" />
     <Compile Include="Vendas\Descontos\CalculadorDeDescontos.cs" />
     <Compile Include="Vendas\Descontos\Desconto.cs" />
     <Compile Include="Vendas\Descontos\DescontoParaMaisDe10Itens.cs" />

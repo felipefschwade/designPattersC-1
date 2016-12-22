@@ -46,6 +46,9 @@
     <Compile Include="Contas\Conta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\RelatorioComplexo.cs" />
+    <Compile Include="Relatorios\RelatorioSimples.cs" />
+    <Compile Include="Relatorios\TemplateRelatorio.cs" />
     <Compile Include="Requisicoes\Requisicao.cs" />
     <Compile Include="Respostas\Resposta.cs" />
     <Compile Include="Respostas\RespostaEmCSV.cs" />

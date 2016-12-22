@@ -13,6 +13,9 @@ namespace DesignPatterns
         ISS iss = new ISS();
         ICMS icms = new ICMS();
         ICC icc = new ICC();
+        ICPP icpp = new ICPP();
+        IKCV ikcv = new IKCV();
+        IHIT ihit = new IHIT();
         CalculadorDeImpostos calc = new CalculadorDeImpostos();
         List<Item> itens = new List<Item>();
         CalculadorDeDescontos calcDescontos = new CalculadorDeDescontos();
@@ -32,9 +35,15 @@ namespace DesignPatterns
                 var valorIss = calc.CalcularImposto(orcamento, iss);
                 var valorIcms = calc.CalcularImposto(orcamento, icms);
                 var valorIcc = calc.CalcularImposto(orcamento, icc);
+                var valorIcpp = calc.CalcularImposto(orcamento, icpp);
+                var valorIkcv = calc.CalcularImposto(orcamento, ikcv);
+                var valorIhit = calc.CalcularImposto(orcamento, ihit);
                 textICMS.Text = Convert.ToString(valorIcms);
                 textISS.Text = Convert.ToString(valorIss);
                 textICC.Text = Convert.ToString(valorIcc);
+                textICPP.Text = Convert.ToString(valorIcpp);
+                textIKCV.Text = Convert.ToString(valorIkcv);
+                textIHIT.Text = Convert.ToString(valorIhit);
                 textValorDesconto.Text = Convert.ToString(valorDesconto);
             }
             catch (Exception ex)
@@ -75,6 +84,11 @@ namespace DesignPatterns
             {
                 MessageBox.Show("Lista vazia");
             }
+        }
+
+        private void bindingOrcamento_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
