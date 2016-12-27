@@ -7,14 +7,13 @@ using Empresa.DesignPatterns.Vendas;
 
 namespace Empresa.DesignPatterns.Impostos
 {
-    public class ISS : Imposto
+    public class ImpostoMuitoAlto : Imposto
     {
-        public ISS(Imposto outroImposto) : base(outroImposto) { }
-        public ISS() : base() { }
-
+        public ImpostoMuitoAlto(Imposto imposto) : base(imposto) { }
+        public ImpostoMuitoAlto() :base() { }
         public override double Calcula(Orcamento orcamento)
         {
-            return orcamento.Valor * 0.06 + CalculaOutroImposto(orcamento);
+            return orcamento.Valor * 0.2 + CalculaOutroImposto(orcamento);
         }
     }
 }

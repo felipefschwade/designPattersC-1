@@ -7,8 +7,24 @@ using System.Threading.Tasks;
 
 namespace Empresa.DesignPatterns.Impostos
 {
-    public interface Imposto
+    public abstract class Imposto
     {
-        double Calcula(Orcamento orcamento);
+
+        Imposto OutroImposto { get; set; }
+
+        public Imposto(Imposto outroImposto)
+        {
+            OutroImposto = outroImposto;
+        }
+        public Imposto() { }
+
+        public abstract double Calcula(Orcamento orcamento);
+
+        protected double CalculaOutroImposto(Orcamento orcamento)
+        {
+            if (OutroImposto == null) return 0;
+            return OutroImposto.Calcula(orcamento);
+        }
+      
     }
 }

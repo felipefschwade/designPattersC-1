@@ -9,6 +9,8 @@ namespace Empresa.DesignPatterns.Impostos
 {
     public class IKCV : TemplateImposto
     {
+        public IKCV(Imposto outroImposto) : base(outroImposto) { }
+        public IKCV() : base() { }
         protected override bool DeveUsarTaxaMaxima(Orcamento orcamento)
         {
             if (orcamento.Valor > 500)

@@ -10,12 +10,6 @@ namespace DesignPatterns
     public partial class Form1 : Form
     {
         Orcamento orcamento;
-        ISS iss = new ISS();
-        ICMS icms = new ICMS();
-        ICC icc = new ICC();
-        ICPP icpp = new ICPP();
-        IKCV ikcv = new IKCV();
-        IHIT ihit = new IHIT();
         CalculadorDeImpostos calc = new CalculadorDeImpostos();
         List<Item> itens = new List<Item>();
         CalculadorDeDescontos calcDescontos = new CalculadorDeDescontos();
@@ -32,26 +26,14 @@ namespace DesignPatterns
                 orcamento = new Orcamento(itens);
                 textOrcamento.Text = Convert.ToString(orcamento.Valor);
                 var valorDesconto = calcDescontos.Calcula(orcamento);
-                var valorIss = calc.CalcularImposto(orcamento, iss);
-                var valorIcms = calc.CalcularImposto(orcamento, icms);
-                var valorIcc = calc.CalcularImposto(orcamento, icc);
-                var valorIcpp = calc.CalcularImposto(orcamento, icpp);
-                var valorIkcv = calc.CalcularImposto(orcamento, ikcv);
-                var valorIhit = calc.CalcularImposto(orcamento, ihit);
-                textICMS.Text = Convert.ToString(valorIcms);
-                textISS.Text = Convert.ToString(valorIss);
-                textICC.Text = Convert.ToString(valorIcc);
-                textICPP.Text = Convert.ToString(valorIcpp);
-                textIKCV.Text = Convert.ToString(valorIkcv);
-                textIHIT.Text = Convert.ToString(valorIhit);
+                var valorImpostos = calc.CalcularImposto(orcamento, new ISS(new ICMS(new ICC(new IKCV(new IHIT(new ICPP(new ImpostoMuitoAlto())))))));
+                textImpostos.Text = Convert.ToString(valorImpostos);
                 textValorDesconto.Text = Convert.ToString(valorDesconto);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Não foi possível calcular os impostos do orcamento");
-                textICMS.Text = "";
-                textISS.Text = "";
-                textICC.Text = "";
+                textImpostos.Text = "";
             }
         }
 
