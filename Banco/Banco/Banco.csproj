@@ -44,6 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contas\Conta.cs" />
+    <Compile Include="Filtros\ContasComMenosDe100Reais.cs" />
+    <Compile Include="Filtros\Filtro.cs" />
+    <Compile Include="Filtros\FiltroMaisDe500KDeSaldo.cs" />
+    <Compile Include="Filtros\FiltroMesCorrente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relatorios\RelatorioComplexo.cs" />

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Banco.Relatorios;
+using Banco.Filtros;
 
 namespace Banco
 {
@@ -14,11 +15,15 @@ namespace Banco
     {
         static void Main(string[] args)
         {
-            var c = new Conta(1, 120.00, "Felipe");
-            var c2 = new Conta(2, 120.00, "Pedro");
             var Contas = new List<Conta>();
-            Contas.Add(c);
-            Contas.Add(c2);
+            for (int i = 0; i < 10; i++)
+            {
+                var c = new Conta(i, i + 10 * i, Convert.ToString(i), DateTime.Now);
+                Console.WriteLine(c.DataDeCriacao.ToString());
+                Contas.Add(c);
+            }
+            Contas.Add(new Conta(13, 600000, "Delfo", new DateTime(2016, 11, 30)));
+            Contas.Add(new Conta(14, 150000, "Felipe", new DateTime(2016, 11, 30)));
             var rc = new RelatorioComplexo();
             var rs = new RelatorioSimples();
             rc.Imprime(Contas);
@@ -28,9 +33,9 @@ namespace Banco
             var r3 = new RespostaEmXML();
             r1.proxima = r2;
             r2.proxima = r3;
-
-            var Requisicao = new Requisicao(Formato.XML);
-            r1.Responde(Requisicao, c);
+            Filtro filtro = new ContasComMenosDe100Reais(new FiltroMaisDe500KDeSaldo(new FiltroMesCorrente()));
+            var filtradas = filtro.Filtra(Contas);
+            filtradas.ToList().ForEach(c => Console.WriteLine(c));
             Console.ReadKey();
 
         }
