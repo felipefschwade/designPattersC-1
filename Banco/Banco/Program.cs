@@ -19,7 +19,6 @@ namespace Banco
             for (int i = 0; i < 10; i++)
             {
                 var c = new Conta(i, i + 10 * i, Convert.ToString(i), DateTime.Now);
-                Console.WriteLine(c.DataDeCriacao.ToString());
                 Contas.Add(c);
             }
             Contas.Add(new Conta(13, 600000, "Delfo", new DateTime(2016, 11, 30)));
